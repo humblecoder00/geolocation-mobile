@@ -15,7 +15,19 @@ class LocationBox extends Component {
 
   renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
-      return <div>Error: {this.state.errorMessage}</div>;
+    //   return <div>Error: {this.state.errorMessage}</div>;
+    return (
+        <div className="ui placeholder segment">
+          <div className="ui icon header">
+            <i className="map marker alternate icon"></i>
+            Please give us access to your Geo-location
+          </div>
+          <div className="inline">
+            <a className="ui primary button" href="intent:#Intent;action=android.settings.SETTINGS;end;">Android</a>
+            <button className="ui primary button">Iphone</button>
+          </div>
+        </div>
+      );
     }
 
     if (!this.state.errorMessage && this.state.lat) {
