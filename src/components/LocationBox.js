@@ -23,7 +23,7 @@ class LocationBox extends Component {
             Please give us access to your Geo-location
           </div>
           <div className="inline">
-            <a className="ui primary button" href="intent://scan/#Intent;scheme=android.settings.LOCATION_SOURCE_SETTINGS;end;">Android</a>
+            <a className="ui primary button" href="intent://scan/#Intent;scheme=android.settings.LOCATION_SOURCE_SETTINGS;package=com.android.settings;end;">Android</a>
             <button className="ui primary button">Iphone</button>
           </div>
         </div>
