@@ -14,7 +14,7 @@ class LocationBox extends Component {
   }
 
   openIosSettings = () => {
-    window.location.href = "prefs:root=LOCATION_SERVICES";
+    window.location.href = "App-Prefs:root=LOCATION_SERVICES";
 }
 
   renderContent() {
