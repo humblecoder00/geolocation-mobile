@@ -13,6 +13,10 @@ class LocationBox extends Component {
     );
   }
 
+  openIosSettings = () => {
+    window.location.href = "prefs:root=LOCATION_SERVICES";
+}
+
   renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
     //   return <div>Error: {this.state.errorMessage}</div>;
@@ -24,7 +28,7 @@ class LocationBox extends Component {
           </div>
           <div className="inline">
             <a className="ui primary button" href="intent://scan/#Intent;scheme=settings;package=com.android.settings.location;end;">Android</a>
-            <button className="ui primary button">Iphone</button>
+            <button className="ui primary button" onClick={this.openIosSettings()}>Iphone</button>
           </div>
         </div>
       );
@@ -48,12 +52,14 @@ class LocationBox extends Component {
           Please give us access to your Geo-location
         </div>
         <div className="inline">
-          <button className="ui primary button">Android</button>
-          <button className="ui primary button">Iphone</button>
+        <a className="ui primary button" href="intent://scan/#Intent;scheme=settings;package=com.android.settings.location;end;">Android</a>
+        <button className="ui primary button" onClick={this.openIosSettings}>Iphone</button>
         </div>
       </div>
     );
   }
+
+  
 
   render() {
     return (
